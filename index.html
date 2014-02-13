@@ -4,12 +4,17 @@
     <title>What does the weather rock say?</title>
     <link rel="stylesheet" href="/animations.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="/favicon.ico" />
     <script type="text/javascript" src="//use.typekit.net/gvp7wrm.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <style>
+    html {
+    -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+    }
     body{
       background-color: #F4F4F4;
-      font-family: "proxima nova";
+      font-family: "proxima-nova", sans-serif;
+      text-align: center;
     }
     h1 {
     color: #222222;
@@ -21,12 +26,13 @@
     }
     h2 {font-size: 30px;}
     .bottom {
-    margin-top: 100px;
-    text-align: center;
-    }
-    #forecast {
-    text-align: center;
-    }
+	margin-top: 100px;
+	text-align: center;
+	}
+	#forecast {
+    margin: 0 auto;
+    max-width: 940px;
+	}
     #forecast img {
     width: 300px;
     }    
@@ -35,6 +41,11 @@
     }
     a{
       color: #888;
+      transition: all 300ms ease 0s;
+      -webkit-transition: transition: all 300ms ease 0s;
+    }
+    a:hover {
+    color: #FF69B4;
     }
     ul {
       text-align: center;
@@ -52,18 +63,20 @@
     </style>
   </head>
   <body>
-    <canvas id="icon" width="128" height="128" style="display: none;"></canvas>
     <div id="forecast">
     
     <!--- Edit the following line -->
+    
     <h1>What does the weather rock say?</h1>
     <img class="animate tossing" src="/rock.png">
     <h2>It's warm in San Antonio, TX</h2>
+    
     <!-- Don't edit past this point -->
 
     </div>
+    
     <div class="bottom">
-    <p>Why listen to those fancy weathermen when you have the <a href="http://en.wikipedia.org/wiki/Weather_rock">weather rock</a>?</p>
+    <p>Why listen to those fancy weathermen when you have the <a target="_blank" href="http://en.wikipedia.org/wiki/Weather_rock">weather rock</a>?</p>
 
       <a href="http://www.isitsnowinginatlantaga.com/">atlanta, ga</a>
       <span>&nbsp;&#183;&nbsp;</span>
@@ -74,9 +87,11 @@
       <a href="http://www.snowinginlex.com/">lexington, ky</a>
       <span>&nbsp;&#183;&nbsp;</span>
       <a href="http://www.snowed-island.com/">rhode island</a>
-    <p class="credits">made by <a href="http://maya-benari.com">maya</a> + <a href="http://techzans.com/">CfA San Antonio</a></p>      
-    </div>
-    <p class="viewsource"><a href="https://github.com/jden/snowchatt">view the source</a> <br> and start your own</p>
+      <p class="credits">made by <a target="_blank" href="http://maya-benari.com">maya</a> + <a href="http://techzans.com/">CfA San Antonio</a></p>      
+      </div>
+      <a target="_blank" href="https://github.com/maya-/weatherrock">
+      <img src="GitHub-Mark-32px.png">
+      </a>
 
   </body>
 </html>
