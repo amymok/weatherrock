@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Is it snowing in Chattanooga, Tennessee?</title>
+    <title>What does the weather rock say?</title>
+    <link rel="stylesheet" href="/animations.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="//use.typekit.net/gvp7wrm.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <style>
-    @font-face {
-      font-family: 'ChatypeB2.1RegularRegular';
-      src: url('chatypeb2.1regular-webfont.eot');
-      src: url('chatypeb2.1regular-webfont.eot?#iefix') format('embedded-opentype'),
-           url('chatypeb2.1regular-webfont.woff') format('woff'),
-           url('chatypeb2.1regular-webfont.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
     body{
-      background-color: #fff;
-      font-family: "ChatypeB2.1RegularRegular";
+      background-color: #F4F4F4;
+      font-family: "proxima nova";
     }
-    h1 { 
-      color: #222;
-      text-align: center;
-      font-size: 100px;
-      margin-top: 100px;
+    h1 {
+    color: #222222;
+    font-size: 90px;
+    line-height: 1;
+    margin-bottom: 90px;
+    margin-top: 90px;
+    text-align: center;
     }
+    h2 {font-size: 30px;}
+    .bottom {
+    margin-top: 100px;
+    text-align: center;
+    }
+    #forecast {
+    text-align: center;
+    }
+    #forecast img {
+    width: 300px;
+    }    
     .credits {
       text-align: center;
-      margin-top: 100px;
     }
     a{
       color: #888;
-    }
-    em{
-      display: block;
-      text-align: center;
-      font-size: 80%;
     }
     ul {
       text-align: center;
@@ -49,55 +51,32 @@
     }
     </style>
   </head>
-  <body> 
+  <body>
     <canvas id="icon" width="128" height="128" style="display: none;"></canvas>
-    <h1 id="forecast">
+    <div id="forecast">
     
     <!--- Edit the following line -->
-    Checking&hellip;
-    
-    <!-- Don't edit past this point -->  
+    <h1>What does the weather rock say?</h1>
+    <img class="animate tossing" src="/rock.png">
+    <h2>It's warm in San Antonio, TX</h2>
+    <!-- Don't edit past this point -->
 
-    </h1>
-    <p class="credits">made by <a href="http://jden.us">jden</a> and the <a href="http://chitchatt.org/">Chattanooga Code for America fellows</a></p>
-    <em>please note, this is not an official (or necessarily accurate) website. it's meant to be fun. <a href="http://www.wunderground.com/US/TN/099.html">be safe!</a></em>
-    <ul>
-      <li><a href="http://isitsnowingincharlotte.com/">isitsnowingincharlotte.com</a></li>
-      <li><a href="http://www.isitsnowinginatlantaga.com/">isitsnowinginatlantaga.com</a></li>
-      <li><a href="http://www.snowinginlex.com/">snowinginlex.com</a></li>
-      <li><a href="http://www.snowed-island.com/">snowed-island.com</a></li>
-    </ul>
+    </div>
+    <div class="bottom">
+    <p>Why listen to those fancy weathermen when you have the <a href="http://en.wikipedia.org/wiki/Weather_rock">weather rock</a>?</p>
+
+      <a href="http://www.isitsnowinginatlantaga.com/">atlanta, ga</a>
+      <span>&nbsp;&#183;&nbsp;</span>
+      <a href="http://isitsnowingincharlotte.com/">charlotte, nc</a>
+      <span>&nbsp;&#183;&nbsp;</span>           
+      <a href="http://isitsnowinginchattanooga.com/">chattanooga, tn</a>
+      <span>&nbsp;&#183;&nbsp;</span>      
+      <a href="http://www.snowinginlex.com/">lexington, ky</a>
+      <span>&nbsp;&#183;&nbsp;</span>
+      <a href="http://www.snowed-island.com/">rhode island</a>
+    <p class="credits">made by <a href="http://maya-benari.com">maya</a> + <a href="http://techzans.com/">CfA San Antonio</a></p>      
+    </div>
     <p class="viewsource"><a href="https://github.com/jden/snowchatt">view the source</a> <br> and start your own</p>
 
-    <script src="skycons/skycons.js"></script>
-    <script>
-        (function(head, script, forecast, API, skycons, icon) {
-            "use strict";
-
-            window.showConditions   =   function(data) {
-                if(data && data.currently && data.currently.icon && data.currently.icon === 'snow') {
-                    forecast.innerHTML  =   'Yes';
-                    skycons.add(icon, data.currently.icon);
-                    icon.removeAttribute('style');
-                    skycons.play();
-                } else {
-                    forecast.innerHTML  =   'No';
-                }
-            };
-
-            script.src  =   API;
-            head.appendChild(script);
-        })(document.head || document.getElementsByTagName('head')[0],document.createElement('script'), document.getElementById('forecast'), 'https://api.forecast.io/forecast/0de1d0d0a092cba91e04c273570a286b/35.0456,-85.2672?callback=showConditions', new window.Skycons({'color': '#222222'}), document.getElementById('icon'));
-    </script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-47969102-1', 'isitsnowinginchattanooga.com');
-  ga('send', 'pageview');
-
-</script>
   </body>
 </html>
